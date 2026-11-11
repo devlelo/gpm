@@ -1,35 +1,61 @@
-# GPM Conecta — Repositórios e Dependências
+# GPM Conecta — Repositórios, Dependências e Integrações
 
 ## 1. Repositório oficial
+
 | Item | Valor |
 |---|---|
 | Projeto | GPM Conecta |
 | Repositório | https://github.com/devlelo/gpm |
 | Branch principal | main |
-| Responsabilidade | Código Laravel, protótipo e documentação |
+| Responsabilidade | Aplicação Laravel, protótipo aprovado e documentação |
 
-O repositório foi consultado antes da criação da documentação e estava vazio, sem commits e sem branches listadas. Esta documentação constitui a base inicial após confirmação dos commits.
+Este repositório é a fonte oficial do projeto. Outros repositórios podem ser usados apenas como referência, protótipo ou dependência aprovada e devem ser registados aqui.
 
-## 2. Repositórios de referência
-Ainda não foi aprovada nenhuma dependência externa nem código para copiar. Antes de adotar referência, registar URL/proprietário, licença, atividade, compatibilidade, partes reutilizadas, alterações e riscos.
+## 2. Base tecnológica
 
-Não copiar código sem verificar licença e origem.
-
-## 3. Dependências planeadas
-| Dependência | Uso | Estado |
+| Tecnologia | Finalidade | Estado |
 |---|---|---|
-| Laravel 12 | Framework backend | Planeado; instalação pendente |
-| MySQL | Base de dados | Planeado; configuração pendente |
-| Blade | Templates | Incluído no Laravel |
-| Dompdf | PDFs comerciais | Avaliar quando necessário |
-| Starter kit de autenticação | Login/registo | Escolher após comparar opções |
+| Laravel 12 | Backend e aplicação | Instalado localmente segundo confirmação do responsável; código-base enviado ao repositório e sujeito a validação contínua |
+| PHP 8.2+ | Runtime | PHP 8.2.12 reportado no ambiente local |
+| MySQL | Base de dados principal | Escolhido; ligação e migrations ainda carecem de confirmação documentada |
+| Blade | Templates | Disponível no Laravel |
+| HTML/CSS/JavaScript | Interface | Planeado |
+| Dompdf | PDFs | Candidato; não instalado/aprovado |
+| Filament / Breeze | Administração/autenticação | Não selecionados |
 
-Não instalar pacotes por conveniência. Registar necessidade, versão, compatibilidade e impacto antes de cada instalação.
+## 3. Curadoria de plataformas e pacotes
 
-## 4. Protótipo e alojamento
-- Protótipo visual estático poderá ser publicado na Vercel.
-- Backend Laravel e MySQL exigem alojamento compatível com PHP e MySQL.
-- Alojamento de produção ainda não decidido.
+Aimeos, Lunar e Bagisto foram mencionados como candidatos de avaliação. **Nenhum está aprovado ou instalado.** Antes de qualquer adoção, comparar versão compatível com Laravel 12, licença, dependências, arquitetura, segurança, testes, extensão do fluxo de pedidos e custo de manutenção. A decisão exige autorização e registo.
 
-## 5. Atualização
-Adicionar cada repositório/pacote aprovado com finalidade, licença, versão, data de avaliação e decisão.
+Não incorporar código de terceiros sem verificar origem, licença e compatibilidade. Não substituir o núcleo comercial da GPM por um pacote de loja sem demonstrar que respeita a validação humana e a separação entre pedido, proposta e encomenda.
+
+## 4. Integrações previstas — não aprovadas
+
+| Área | Candidatos / objetivo | Estado |
+|---|---|---|
+| Pagamentos Angola | AppyPay, G-Pay Go, Gateway oficial Multicaixa e alternativas a pesquisar | Avaliação futura; nenhum selecionado |
+| Fornecedores | APIs de fornecedores e marketplaces | Futuro; operação manual inicial |
+| Logística | Transportadoras e parceiros | Futuro |
+| Comunicação | SMS, e-mail e notificações | Futuro |
+
+A seleção exige análise de documentação técnica, contrato, taxas, requisitos de adesão, segurança, suporte, ambiente de testes e condições de liquidação. Não guardar credenciais em código ou no Git.
+
+## 5. Protótipo e alojamento
+
+- Protótipo visual estático HTML/CSS/JS pode ser publicado na Vercel para revisão.
+- Vercel não deve ser tratado como alojamento do backend Laravel/MySQL deste projeto.
+- Produção exige PHP/Laravel, MySQL, HTTPS, armazenamento persistente, backups e tarefas agendadas conforme necessidade.
+- Alojamento ainda não selecionado.
+
+## 6. Registo de adoção
+
+Para cada pacote, repositório ou serviço aprovado, registar:
+- Nome, URL e responsável.
+- Finalidade e módulos usados.
+- Versão fixada.
+- Licença e obrigações.
+- Compatibilidade e dependências.
+- Data e evidência da avaliação.
+- Riscos e plano de atualização.
+- Autorização do responsável pelo projeto.
+
