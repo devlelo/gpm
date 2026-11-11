@@ -52,6 +52,6 @@ Nenhuma alteração de âmbito, identidade visual, arquitetura, tecnologia, depe
 
 ## Estado
 
-A documentação de visão e arquitetura está registada. A instalação local do Laravel 12.72.0 foi reportada pelo responsável. A ligação MySQL, migrations, protótipo, funcionalidades comerciais, testes e publicação ainda precisam de validação e registo próprios.
+A documentação de visão e arquitetura está registada. A primeira camada pública do storefront em Laravel Blade foi criada na branch `feat/gpm-spree-storefront`, com página inicial e catálogo em estado vazio até à entrada de dados reais. A instalação local Laravel 12.72.0 foi reportada pelo responsável. A ligação MySQL, migrations, catálogo dinâmico, autenticação, pedidos, testes locais e publicação continuam sujeitos a validação.
 
 Repositório oficial: https://github.com/devlelo/gpm
