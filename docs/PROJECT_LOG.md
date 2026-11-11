@@ -108,3 +108,28 @@ Registar apenas o que foi feito, observado ou testado. Não marcar trabalho conc
 - Executar no ambiente local: `npm run build`, `php artisan route:list`, `php artisan test` e abrir as rotas `/` e `/catalogo` no navegador.
 - A página de catálogo permanece intencionalmente sem produtos até existir catálogo real aprovado e ligação aos dados.
 - Lista de pedido, autenticação e submissão ainda não foram implementadas; não há checkout nem confirmação automática.
+
+
+## 2026-11-11 — Revisão visual para marketplace B2B neutro
+
+**Autorização / decisão**
+- O responsável pediu um design habitual de marketplace, simples, mais branco e neutro, com pequenos toques da paleta GPM.
+- Esta decisão substitui a direção Neo-Industrial Field Manual anteriormente registada.
+
+**Feito**
+- Refeito `resources/css/gpm-storefront.css` com branco dominante, superfícies claras, bordas suaves e componentes familiares.
+- Simplificado `resources/views/layouts/storefront.blade.php`: cabeçalho, navegação, CTA e rodapé.
+- Reorganizada `resources/views/home.blade.php` com hero simples, benefícios, área de catálogo e processo em três etapas.
+- Simplificada `resources/views/catalog.blade.php` mantendo o estado vazio e sem inventar produtos, preços ou stock.
+- Atualizados `README.md` e `docs/PROJECT_MASTER.md` para refletir a nova direção visual.
+
+**Testado**
+- Confirmada a gravação dos ficheiros e commits na branch GitHub.
+- Ainda não foi executado `npm run build`, `php artisan test` nem validação visual no navegador.
+
+**Pendente / bloqueios**
+- Validar localmente a compilação Vite, as rotas e a apresentação em desktop e telemóvel.
+- O catálogo permanece sem produtos reais até haver dados aprovados e integração com a base de dados.
+
+**Próximo passo**
+- O responsável deve atualizar a branch local e enviar o resultado da validação ou uma captura de ecrã para os ajustes visuais finais.
