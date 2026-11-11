@@ -13,11 +13,14 @@ Registar o que foi feito e testado. Não marcar trabalho concluído com base ape
 
 ### Documentação inicial
 Os ficheiros abaixo serão assinalados como concluídos após confirmação dos commits no GitHub:
-- README.md — visão geral.
-- docs/PROJECT_MASTER.md — visão, âmbito, módulos, plano e decisões.
-- docs/ARCHITECTURE.md — entidades, fluxo e regras.
-- docs/PROJECT_LOG.md — histórico.
-- docs/REPOSITORIES.md — inventário.
+- [x] README.md — visão geral.
+- [x] docs/PROJECT_MASTER.md — visão, âmbito, módulos, plano e decisões.
+- [x] docs/ARCHITECTURE.md — entidades, fluxo e regras.
+- [x] docs/PROJECT_LOG.md — histórico.
+- [x] docs/REPOSITORIES.md — inventário.
+
+### Verificação dos ficheiros
+Os cinco ficheiros foram criados na branch main e relidos através do GitHub após os commits. A fase 0 (documentação inicial) está concluída.
 
 ### Ainda não executado / não validado
 - Criação da aplicação Laravel local.
