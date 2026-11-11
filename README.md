@@ -1,27 +1,47 @@
-# Salone - Free Bootstrap 5 Business Template 
+# GPM Conecta
 
-- [Demo](https://themewagon.github.io/Electro-Bootstrap/)
+Plataforma B2B de pedidos de fornecimento empresarial da GPM.
 
-#### Download
+> O GPM Conecta não é um checkout de compra imediata. O cliente submete um pedido; a equipa GPM valida disponibilidade, preço, prazo e condições antes de emitir uma proposta. A encomenda só é confirmada por um operador autorizado.
 
-- [Download from ThemeWagon](https://themewagon.com/themes/electro-bootstrap/)
+## Identidade visual
 
-## Getting Started
+- Branco: `#FFFFFF`
+- Azul-marinho: `#0A2945`
+- Dourado: `#CE9E53`
 
-Clone Repository
+## Stack
 
-```
-https://github.com/themewagon/Electro-Bootstrap.git
-```
+- Laravel 12 / PHP 8.2+
+- MySQL (base de dados principal)
+- Blade, HTML, CSS e JavaScript
+- Vite para assets frontend
 
-## Author
+## Estrutura e documentação
 
-```
-Salone is developed by Team HTML Codex.
-```
+- [Documento Mestre](docs/PROJECT_MASTER.md)
+- [Arquitetura](docs/ARCHITECTURE.md)
+- [Estrutura do projeto](docs/PROJECT_STRUCTURE.md)
+- [Repositórios e dependências](docs/REPOSITORIES.md)
+- [Controlo de alterações](docs/CHANGE_CONTROL.md)
+- [Registo de progresso](docs/PROJECT_LOG.md)
+- [Template Electro original](resources/templates/electro-original/)
 
-## License
+## Ambiente local
 
-- Design and Code is Copyright &copy; [HTML Codex](https://htmlcodex.com/).
-- Licensed cover under [MIT]
-- Distributed by [ThemeWagon](https://themewagon.com)
+1. Instalar dependências PHP com `composer install`.
+2. Copiar `.env.example` para `.env` e configurar MySQL.
+3. Gerar chave com `php artisan key:generate`.
+4. Executar migrations com `php artisan migrate`.
+5. Instalar dependências JS com `npm install`.
+6. Executar `npm run dev` durante desenvolvimento ou `npm run build` para compilar.
+
+Não colocar `.env`, credenciais, logs, caches, sessões ou ficheiros privados no Git.
+
+## Estado atual
+
+O repositório contém a base Laravel e documentação de produto/arquitetura. Os módulos comerciais GPM só devem ser considerados implementados quando existirem código, migrations, testes e validação documentados. Consulte `docs/PROJECT_LOG.md`.
+
+## Governação
+
+Alterações de âmbito, arquitetura, identidade visual, schema, dependências ou funcionalidades devem respeitar [docs/CHANGE_CONTROL.md](docs/CHANGE_CONTROL.md).
