@@ -1,6 +1,6 @@
 # GPM Conecta
 
-Plataforma empresarial de pedidos de fornecimento, negociação e acompanhamento comercial, operada pela GPM.
+Plataforma B2B de pedidos de fornecimento empresarial, negociação e acompanhamento comercial, operada pela GPM.
 
 > **A GPM Conecta não é uma loja de pagamento imediato.** O cliente submete uma intenção de fornecimento; a equipa GPM analisa disponibilidade, fornecedores, preços, prazos e condições; só depois de validação comercial humana a encomenda pode ser formalmente confirmada.
 
@@ -8,11 +8,11 @@ Plataforma empresarial de pedidos de fornecimento, negociação e acompanhamento
 
 | Cor | Código | Aplicação |
 |---|---|---|
-| Branco | `#FFFFFF` | Base, fundos e espaço de respiração |
-| Azul-marinho | `#0A2945` | Estrutura, navegação, títulos e elementos principais |
-| Dourado / castanho claro | `#CE9E53` | Destaques, indicadores e chamadas à ação |
+| Branco | `#FFFFFF` | Base dominante, fundos e espaço de respiração |
+| Azul-marinho | `#0A2945` | Navegação, títulos, botões principais e elementos de confiança |
+| Dourado / castanho claro | `#CE9E53` | Pequenos acentos, indicadores e destaques pontuais |
 
-Direção visual: **04. Neo-Industrial Field Manual**, adaptada à identidade cromática oficial da GPM. Não introduzir outras cores dominantes sem autorização.
+Direção visual atual: **marketplace B2B convencional, simples e neutro**. Usar branco como base dominante, superfícies cinza muito claras, cartões discretos, bordas suaves, tipografia legível e navegação familiar. O azul-marinho estrutura a interface; o dourado é apenas um acento. Evitar composições experimentais, fundos escuros extensos, grafismos técnicos excessivos, brilhos e animações decorativas.
 
 ## Fluxo comercial resumido
 
@@ -52,6 +52,6 @@ Nenhuma alteração de âmbito, identidade visual, arquitetura, tecnologia, depe
 
 ## Estado
 
-A documentação de visão e arquitetura está registada. A instalação local do Laravel 12.72.0 foi reportada pelo responsável. A ligação MySQL, migrations, protótipo, funcionalidades comerciais, testes e publicação ainda precisam de validação e registo próprios.
+A camada pública inicial do storefront Laravel Blade está na branch `feat/gpm-spree-storefront`, com homepage e catálogo em estado vazio até à entrada de dados reais. O design foi revisto para uma direção de marketplace B2B convencional, clara e neutra. A compilação Vite, renderização Blade, ligação MySQL, migrations, catálogo dinâmico, autenticação, pedidos, testes locais e publicação continuam sujeitos a validação.
 
 Repositório oficial: https://github.com/devlelo/gpm

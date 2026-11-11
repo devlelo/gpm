@@ -62,3 +62,74 @@ Registar apenas o que foi feito, observado ou testado. Não marcar trabalho conc
 
 **Próximo passo**
 - ...
+
+
+## 2026-11-11 — Autorização e implementação inicial do storefront GPM
+
+**Autorização / decisão**
+- Comando explícito do responsável: “sim go”, em resposta à proposta de adaptar o storefront Spree à identidade GPM.
+- Âmbito autorizado: criar a primeira camada visual pública em Laravel Blade, inspirada nos padrões de navegação, hero, descoberta de catálogo e lista de pedido do Spree Storefront; aplicar a identidade GPM aprovada.
+- Limites: não instalar Spree, Next.js ou backend externo; não alterar base de dados, migrations, autenticação, regras comerciais ou dependências; não inventar produtos, preços, fornecedores ou métricas; preservar a operação B2B por pedido sujeito a validação humana.
+
+**Feito**
+- Criada a branch isolada `feat/gpm-spree-storefront` a partir de `main`.
+- Inspecionados os ficheiros Laravel existentes, a política de controlo de alterações e os componentes de referência do Spree Storefront.
+- Preparada a adaptação Blade com layout público, página inicial e catálogo em estado vazio até existir catálogo real.
+
+**Testado**
+- Inspeção estática dos ficheiros existentes e da estrutura Laravel via GitHub.
+- Execução local de PHP/Vite ainda não disponível nesta sessão; validação funcional pendente.
+
+**Pendente / bloqueios**
+- Confirmar compilação Vite e renderização Blade no ambiente local do responsável.
+- Ligar catálogo e lista de pedido aos módulos de domínio quando forem implementados e aprovados.
+
+**Próximo passo**
+- Rever a branch, executar `npm run build`, `php artisan route:list` e testes Laravel no ambiente local; só depois preparar integração/merge.
+
+
+### Implementação inicial concluída nesta branch
+
+**Feito**
+- Criado `resources/views/layouts/storefront.blade.php`: layout responsivo, navegação, cabeçalho, rodapé e acessibilidade básica.
+- Criado `resources/views/home.blade.php`: homepage institucional com hero, explicação do processo e chamadas para o catálogo.
+- Criado `resources/views/catalog.blade.php`: página de catálogo com estado vazio explícito; não foram inventados produtos, preços, stock ou fornecedores.
+- Criado `resources/css/gpm-storefront.css`: identidade visual GPM (branco, azul-marinho e dourado), tipografia IBM Plex e regras responsivas/reduced motion.
+- Criado `resources/js/gpm-storefront.js`: interação do menu móvel.
+- Ligadas as rotas nomeadas `home` e `catalog` em `routes/web.php`; imports adicionados aos pontos de entrada Vite existentes.
+- Preservada a licença MIT de referência em `licenses/SPREE-STOREFRONT-MIT.txt` e registado o Spree como referência de UX, não como dependência.
+- Atualizados README, PROJECT_MASTER e REPOSITORIES para refletir o âmbito e o estado.
+
+**Testado**
+- Confirmada a criação dos ficheiros e commits na branch GitHub.
+- Revisão estática das rotas e imports; compilação Vite, renderização Blade, testes PHPUnit e ligação MySQL não foram executados nesta sessão.
+
+**Pendente / bloqueios**
+- Executar no ambiente local: `npm run build`, `php artisan route:list`, `php artisan test` e abrir as rotas `/` e `/catalogo` no navegador.
+- A página de catálogo permanece intencionalmente sem produtos até existir catálogo real aprovado e ligação aos dados.
+- Lista de pedido, autenticação e submissão ainda não foram implementadas; não há checkout nem confirmação automática.
+
+
+## 2026-11-11 — Revisão visual para marketplace B2B neutro
+
+**Autorização / decisão**
+- O responsável pediu um design habitual de marketplace, simples, mais branco e neutro, com pequenos toques da paleta GPM.
+- Esta decisão substitui a direção Neo-Industrial Field Manual anteriormente registada.
+
+**Feito**
+- Refeito `resources/css/gpm-storefront.css` com branco dominante, superfícies claras, bordas suaves e componentes familiares.
+- Simplificado `resources/views/layouts/storefront.blade.php`: cabeçalho, navegação, CTA e rodapé.
+- Reorganizada `resources/views/home.blade.php` com hero simples, benefícios, área de catálogo e processo em três etapas.
+- Simplificada `resources/views/catalog.blade.php` mantendo o estado vazio e sem inventar produtos, preços ou stock.
+- Atualizados `README.md` e `docs/PROJECT_MASTER.md` para refletir a nova direção visual.
+
+**Testado**
+- Confirmada a gravação dos ficheiros e commits na branch GitHub.
+- Ainda não foi executado `npm run build`, `php artisan test` nem validação visual no navegador.
+
+**Pendente / bloqueios**
+- Validar localmente a compilação Vite, as rotas e a apresentação em desktop e telemóvel.
+- O catálogo permanece sem produtos reais até haver dados aprovados e integração com a base de dados.
+
+**Próximo passo**
+- O responsável deve atualizar a branch local e enviar o resultado da validação ou uma captura de ecrã para os ajustes visuais finais.
