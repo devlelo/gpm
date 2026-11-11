@@ -62,3 +62,29 @@ Registar apenas o que foi feito, observado ou testado. Não marcar trabalho conc
 
 **Próximo passo**
 - ...
+
+
+## 2026-11-11 — Organização da estrutura Laravel e documentação
+
+### Feito no repositório
+- Criada a branch `chore/organize-laravel-project`, derivada da branch de organização do Electro.
+- Substituído o README de template por uma apresentação do GPM Conecta e instruções de ambiente Laravel.
+- Criado `docs/PROJECT_STRUCTURE.md` com a função de cada diretório e regras para manter a estrutura Laravel.
+- Criado `.gitignore` para proteger ambiente, dependências, logs, caches, sessões e views compiladas.
+- Movidos os ficheiros SCSS Bootstrap que estavam soltos na raiz para `resources/vendor/bootstrap/scss/`, sem alterar o conteúdo.
+- Removidos do controlo de versão 40 views Blade compiladas e o ficheiro de log Laravel que estavam em `storage/`.
+- Mantidos os diretórios e ficheiros padrão do Laravel, incluindo `artisan`, `bootstrap/app.php`, `routes/`, `config/`, `database/`, `app/`, `public/`, `resources/` e `tests/`.
+- Mantida a referência Electro em `resources/templates/electro-original/`.
+
+### Verificação Git realizada
+- Confirmada a existência de 64 entradas sob `resources/vendor/bootstrap/scss/` (59 ficheiros SCSS e diretórios associados).
+- Confirmada a ausência de SCSS no antigo caminho `bootstrap/scss/`.
+- Confirmada a remoção dos ficheiros gerados de `storage/framework/views/` e `storage/logs/laravel.log`.
+- Confirmada a preservação dos ficheiros centrais Laravel listados acima.
+
+### Não executado / não confirmado
+- Não foram executados `composer install`, `php artisan`, migrations MySQL, testes PHPUnit ou build Vite.
+- Não foi validada a ligação MySQL nem a configuração local `.env`.
+- Esta organização não implementa módulos comerciais, autenticação empresarial, catálogo, pedidos, propostas ou anúncios.
+- A branch não foi integrada em `main`.
+
