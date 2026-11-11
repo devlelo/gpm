@@ -7,18 +7,15 @@
     <div class="site-container hero__layout">
         <div class="hero__copy">
             <p class="eyebrow"><span class="eyebrow__dot"></span> PLATAFORMA DE FORNECIMENTO B2B</p>
-            <h1>As necessidades da sua empresa, <em>num só lugar.</em></h1>
-            <p class="hero__lead">Encontre produtos para a sua operação, organize as quantidades e envie o seu pedido. A equipa GPM consulta as condições e acompanha o processo consigo.</p>
+            <h1>O fornecimento da sua empresa, <em>mais simples.</em></h1>
+            <p class="hero__lead">Encontre o que a sua operação precisa, organize os artigos e envie um pedido à GPM. A nossa equipa consulta fornecedores e apresenta uma proposta com condições validadas.</p>
             <div class="hero__actions">
                 <a class="button button--navy" href="{{ route('catalog') }}">Explorar catálogo <span aria-hidden="true">→</span></a>
                 <a class="button button--outline" href="#processo">Como funciona</a>
             </div>
         </div>
-        <div class="hero-visual" aria-label="Identidade visual GPM Conecta">
-            <div class="hero-visual__shape">
-                <div class="hero-visual__mark">G</div>
-                <span class="hero-visual__accent"></span>
-            </div>
+        <div class="hero-visual" aria-label="GPM Conecta — fornecimento empresarial">
+            <div class="hero-visual__shape"><div class="hero-visual__mark">G</div><span class="hero-visual__accent"></span></div>
             <div class="hero-visual__caption"><span>GPM Conecta</span><span>Fornecimento B2B</span></div>
         </div>
     </div>
@@ -27,7 +24,7 @@
 <section class="benefits">
     <div class="site-container benefits__grid">
         <div class="benefit"><span class="benefit__icon" aria-hidden="true">⌕</span><div><strong>Catálogo centralizado</strong><span>Consulte as opções de fornecimento</span></div></div>
-        <div class="benefit"><span class="benefit__icon" aria-hidden="true">✓</span><div><strong>Condições validadas</strong><span>Disponibilidade e preços confirmados</span></div></div>
+        <div class="benefit"><span class="benefit__icon" aria-hidden="true">✓</span><div><strong>Condições confirmadas</strong><span>Preços e disponibilidade validados</span></div></div>
         <div class="benefit"><span class="benefit__icon" aria-hidden="true">↗</span><div><strong>Acompanhamento GPM</strong><span>Uma equipa ao longo do processo</span></div></div>
     </div>
 </section>
@@ -35,20 +32,20 @@
 <section class="section-pad">
     <div class="site-container">
         <div class="section-heading">
-            <div><p class="eyebrow">ENCONTRE O QUE PRECISA</p><h2>Explore o catálogo GPM</h2></div>
-            <p>Estamos a preparar a apresentação das categorias e referências disponíveis. O catálogo será atualizado com informação validada pela equipa.</p>
+            <div><p class="eyebrow">TUDO MAIS ORGANIZADO</p><h2>Uma forma simples de pedir</h2></div>
+            <p>Consulte o catálogo, reúna os produtos de que precisa e envie o pedido. A equipa GPM acompanha cada etapa.</p>
         </div>
         <a class="category-placeholder" href="{{ route('catalog') }}">
-            <span><strong>Catálogo em preparação</strong>Consulte esta área em breve ou fale com a equipa GPM para apresentar a sua necessidade.</span>
+            <span><strong>Comece pelo catálogo GPM</strong>As categorias e referências serão apresentadas nesta área à medida que forem validadas pela equipa.</span>
         </a>
     </div>
 </section>
 
-<section class="section-pad" id="processo" style="background: var(--gpm-soft);">
+<section class="section-pad" id="processo" style="background:var(--gpm-soft)">
     <div class="site-container">
         <div class="section-heading">
-            <div><p class="eyebrow">SIMPLES E TRANSPARENTE</p><h2>Como funciona</h2></div>
-            <p>O pedido é analisado pela equipa GPM. A disponibilidade, os preços e os prazos são confirmados antes de qualquer encomenda.</p>
+            <div><p class="eyebrow">DO PEDIDO À ENTREGA</p><h2>Como funciona</h2></div>
+            <p>A disponibilidade, os preços e os prazos são confirmados pela equipa GPM antes de qualquer encomenda.</p>
         </div>
         <div class="process-grid">
             <article class="process-card"><span class="process-card__number">01</span><h3>Escolha os produtos</h3><p>Explore o catálogo e organize os artigos e quantidades de que a sua empresa necessita.</p></article>
