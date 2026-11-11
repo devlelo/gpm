@@ -218,7 +218,7 @@ Seguir convenções Laravel: Models, Controllers, Form Requests, Policies, Servi
 |---|---|---|---|
 | 0 | Documentação e regras | Documentos revistos e registados no GitHub | Concluída |
 | 1 | Base Laravel e MySQL | Instalação, ligação MySQL e migrations testadas | Em validação local |
-| 2 | Protótipo visual | Páginas revistas e aprovadas pelo responsável | Por iniciar |
+| 2 | Storefront público inicial | Home e catálogo Blade criados na branch `feat/gpm-spree-storefront`; validação local e aprovação visual pendentes | Em validação |
 | 3 | Autenticação e empresas | Registo, login, perfis e permissões testados | Por iniciar |
 | 4 | Catálogo e seleção | Categorias, produtos, quantidades e lista de pedido testados | Por iniciar |
 | 5 | Pedidos e análise | Submissão, fila interna, histórico e estados testados | Por iniciar |
