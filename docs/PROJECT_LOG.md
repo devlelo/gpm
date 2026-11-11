@@ -86,3 +86,25 @@ Registar apenas o que foi feito, observado ou testado. Não marcar trabalho conc
 
 **Próximo passo**
 - Rever a branch, executar `npm run build`, `php artisan route:list` e testes Laravel no ambiente local; só depois preparar integração/merge.
+
+
+### Implementação inicial concluída nesta branch
+
+**Feito**
+- Criado `resources/views/layouts/storefront.blade.php`: layout responsivo, navegação, cabeçalho, rodapé e acessibilidade básica.
+- Criado `resources/views/home.blade.php`: homepage institucional com hero, explicação do processo e chamadas para o catálogo.
+- Criado `resources/views/catalog.blade.php`: página de catálogo com estado vazio explícito; não foram inventados produtos, preços, stock ou fornecedores.
+- Criado `resources/css/gpm-storefront.css`: identidade visual GPM (branco, azul-marinho e dourado), tipografia IBM Plex e regras responsivas/reduced motion.
+- Criado `resources/js/gpm-storefront.js`: interação do menu móvel.
+- Ligadas as rotas nomeadas `home` e `catalog` em `routes/web.php`; imports adicionados aos pontos de entrada Vite existentes.
+- Preservada a licença MIT de referência em `licenses/SPREE-STOREFRONT-MIT.txt` e registado o Spree como referência de UX, não como dependência.
+- Atualizados README, PROJECT_MASTER e REPOSITORIES para refletir o âmbito e o estado.
+
+**Testado**
+- Confirmada a criação dos ficheiros e commits na branch GitHub.
+- Revisão estática das rotas e imports; compilação Vite, renderização Blade, testes PHPUnit e ligação MySQL não foram executados nesta sessão.
+
+**Pendente / bloqueios**
+- Executar no ambiente local: `npm run build`, `php artisan route:list`, `php artisan test` e abrir as rotas `/` e `/catalogo` no navegador.
+- A página de catálogo permanece intencionalmente sem produtos até existir catálogo real aprovado e ligação aos dados.
+- Lista de pedido, autenticação e submissão ainda não foram implementadas; não há checkout nem confirmação automática.
