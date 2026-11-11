@@ -246,3 +246,18 @@ Uma fase só pode ser marcada como concluída após evidência de teste e atuali
 
 A documentação e a cláusula de controlo em [CHANGE_CONTROL.md](CHANGE_CONTROL.md) são obrigatórias. Nenhuma decisão aprovada pode ser alterada sem documentação e autorização explícita do responsável pelo projeto. Se houver dúvida, conflito ou necessidade de alteração, parar e pedir autorização antes de executar.
 
+
+
+## 12. Direção visual atualizada — 2026-11-11
+
+Esta decisão substitui a direção visual Neo-Industrial Field Manual anteriormente registada na secção 2. A direção visual aprovada passa a ser **marketplace B2B convencional, simples, branco e neutro**, com uso pontual das cores oficiais.
+
+- Branco `#FFFFFF`: base dominante e superfícies principais.
+- Azul-marinho `#0A2945`: navegação, títulos, botões primários e elementos de confiança.
+- Dourado `#CE9E53`: acentos pequenos, etiquetas e indicadores pontuais.
+- Cinzas muito claros: superfícies secundárias, separadores e bordas discretas.
+- Estrutura familiar: cabeçalho simples, navegação clara, descoberta do catálogo, cartões e filtros quando houver dados reais.
+- Tipografia legível, cantos discretos e sombras suaves.
+- Evitar fundos escuros extensos, grafismos técnicos decorativos, efeitos glow e animações sem função.
+
+A experiência deve parecer imediatamente familiar a quem já utiliza marketplaces, mas respeitar o modelo comercial GPM: o pedido é uma solicitação sujeita a consulta e validação humana, não uma compra com stock ou preço garantido.
