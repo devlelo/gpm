@@ -62,3 +62,27 @@ Registar apenas o que foi feito, observado ou testado. Não marcar trabalho conc
 
 **Próximo passo**
 - ...
+
+
+## 2026-11-11 — Autorização e implementação inicial do storefront GPM
+
+**Autorização / decisão**
+- Comando explícito do responsável: “sim go”, em resposta à proposta de adaptar o storefront Spree à identidade GPM.
+- Âmbito autorizado: criar a primeira camada visual pública em Laravel Blade, inspirada nos padrões de navegação, hero, descoberta de catálogo e lista de pedido do Spree Storefront; aplicar a identidade GPM aprovada.
+- Limites: não instalar Spree, Next.js ou backend externo; não alterar base de dados, migrations, autenticação, regras comerciais ou dependências; não inventar produtos, preços, fornecedores ou métricas; preservar a operação B2B por pedido sujeito a validação humana.
+
+**Feito**
+- Criada a branch isolada `feat/gpm-spree-storefront` a partir de `main`.
+- Inspecionados os ficheiros Laravel existentes, a política de controlo de alterações e os componentes de referência do Spree Storefront.
+- Preparada a adaptação Blade com layout público, página inicial e catálogo em estado vazio até existir catálogo real.
+
+**Testado**
+- Inspeção estática dos ficheiros existentes e da estrutura Laravel via GitHub.
+- Execução local de PHP/Vite ainda não disponível nesta sessão; validação funcional pendente.
+
+**Pendente / bloqueios**
+- Confirmar compilação Vite e renderização Blade no ambiente local do responsável.
+- Ligar catálogo e lista de pedido aos módulos de domínio quando forem implementados e aprovados.
+
+**Próximo passo**
+- Rever a branch, executar `npm run build`, `php artisan route:list` e testes Laravel no ambiente local; só depois preparar integração/merge.
