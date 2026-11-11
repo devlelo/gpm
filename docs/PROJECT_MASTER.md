@@ -1,218 +1,248 @@
 # GPM Conecta — Documento Mestre
 
-- Versão: 1.0
-- Estado: planeamento inicial
+- Versão: 2.0
+- Estado: especificação funcional e visual aprovada; implementação em validação
 - Repositório oficial: https://github.com/devlelo/gpm
-- Branch: main
-- Data: 2026-11-11
+- Branch principal: main
+- Atualizado: 2026-11-11
 
-## 1. Visão
-O GPM Conecta é uma plataforma B2B que liga empresas compradoras a fornecedores e centraliza descoberta de produtos, pedidos de cotação, preparação de propostas, revisão pelo cliente e confirmação de encomendas pela equipa GPM.
+## 1. Visão e posicionamento
 
-Deve servir setores profissionais como construção, hotelaria, obras, escritórios e operações de alimentação profissional, sem ficar limitado a um único tipo de estabelecimento.
+GPM Conecta é uma plataforma B2B de pedidos de fornecimento empresarial. Liga empresas compradoras à operação de fornecimento da GPM e, progressivamente, a fornecedores e parceiros externos.
+
+**Não é uma loja de pagamento imediato nem um marketplace de stock garantido.** O catálogo permite descobrir e selecionar produtos, mas a disponibilidade, preço final, prazo e condições precisam de validação comercial. O cliente apresenta uma intenção de compra; a GPM analisa e negocia; a encomenda só fica confirmada após ação humana autorizada.
+
+Setores possíveis: construção, hotelaria, obras, escritórios, operações de alimentação profissional e outras necessidades empresariais.
 
 ### Objetivos
-1. Facilitar descoberta de produtos e fornecedores.
-2. Permitir pedidos comerciais organizados.
-3. Centralizar análise e resposta aos pedidos.
-4. Permitir propostas com condições e versões.
-5. Separar aceitação comercial da confirmação operacional.
-6. Dar à equipa GPM ferramentas de gestão.
-7. Dar ao cliente área de acompanhamento e histórico.
+1. Apresentar a GPM e o seu catálogo.
+2. Permitir que empresas submetam pedidos com produtos e quantidades.
+3. Centralizar análise interna e consultas a fornecedores.
+4. Criar propostas comerciais com versões e validade.
+5. Registar a decisão do cliente separadamente da confirmação GPM.
+6. Gerir encomendas confirmadas e acompanhamento.
+7. Preparar a plataforma para integrações externas através de API, sem depender delas para o funcionamento inicial.
 
-### Fora do MVP
-Gateway de pagamento, integração automática com fornecedores, logística avançada, SMS, envio automático de e-mail e integrações externas complexas. Avaliar depois do núcleo funcional.
+## 2. Identidade visual oficial
 
-## 2. Perfis
+Direção: **04. Neo-Industrial Field Manual**, adaptada à identidade real da GPM Conecta.
+
+| Cor | Código | Uso |
+|---|---|---|
+| Branco | `#FFFFFF` | Cor base, fundos e espaço de respiração |
+| Azul-marinho | `#0A2945` | Cor dominante de estrutura, navegação, títulos e elementos principais |
+| Dourado / castanho claro | `#CE9E53` | Destaques, indicadores e chamadas à ação |
+
+Regras:
+- Branco deve assegurar clareza e espaço visual.
+- Azul-marinho é a cor estrutural dominante.
+- Dourado é usado como acento, não como fundo dominante generalizado.
+- Não introduzir outras cores dominantes que descaracterizem a marca.
+- Cores funcionais pontuais para estados (por exemplo, erro ou sucesso) só podem ser usadas com moderação e sem substituir a paleta da marca.
+- Não misturar estilos visuais incompatíveis nem redesenhar componentes aprovados sem autorização.
+
+## 3. Perfis e permissões
+
 | Perfil | Responsabilidade |
 |---|---|
-| Visitante | Consultar páginas públicas, categorias e catálogo |
-| Cliente empresarial | Gerir perfil, criar pedidos, consultar propostas e encomendas |
-| Operador GPM | Analisar pedidos, consultar fornecedores, preparar propostas e gerir encomendas |
+| Visitante | Consultar páginas públicas, categorias e produtos |
+| Cliente empresarial | Gerir perfil, criar pedidos, consultar propostas e acompanhar encomendas da sua empresa |
+| Operador GPM | Analisar pedidos, consultar fornecedores, preparar propostas e atualizar processos conforme permissões |
 | Administrador | Gerir utilizadores, permissões, catálogo e configurações |
+| Fornecedor externo | Futuro acesso restrito, apenas se aprovado; no início a GPM pode intermediar consultas |
 
-Portal de fornecedor com login fica para decisão posterior. No MVP, a equipa GPM poderá intermediar consultas e registar respostas.
+O registo empresarial deverá recolher dados de identificação e contacto, incluindo NIF. Os campos exatos, validações e documentos obrigatórios carecem de decisão funcional antes de implementação.
 
-## 3. Fluxo comercial completo
+## 4. Fluxo comercial oficial
 
-### 3.1 Descoberta e registo
-1. Visitante consulta categorias e produtos.
-2. Para submeter pedido, cria conta empresarial.
-3. Preenche dados da empresa e contacto responsável.
-4. Sistema valida os campos obrigatórios e cria perfil do cliente.
+### 4.1 Exploração livre
+Qualquer visitante pode conhecer a GPM, navegar nas áreas de fornecimento, categorias e produtos.
 
-### 3.2 Pedido de cotação
-1. Cliente seleciona produtos e quantidades ou descreve necessidade.
-2. Confirma os dados e submete pedido.
-3. Sistema regista identificador, data, cliente e linhas.
-4. Pedido fica disponível para triagem GPM.
+### 4.2 Seleção
+O visitante seleciona produtos, quantidades e observações e organiza um carrinho/lista de pedido. A seleção não reserva stock nem garante preço ou disponibilidade.
 
-O pedido não é encomenda confirmada nem venda concluída.
+### 4.3 Registo e autenticação
+Para submeter o pedido, o utilizador deve autenticar-se e completar o perfil empresarial, incluindo NIF e contactos necessários.
 
-### 3.3 Análise e fornecedores
-1. Equipa GPM revê produtos, quantidades e requisitos.
-2. Quando necessário, consulta um ou mais fornecedores.
-3. Regista preços, disponibilidade comunicada, prazos e condições.
-4. Solicita esclarecimentos se faltarem dados.
+### 4.4 Submissão do pedido
+O sistema cria referência única, regista cliente, linhas, quantidades, observações, data e histórico. O estado inicial é **Pedido enviado / A aguardar análise**. O envio não constitui aceitação nem compra concluída.
 
-Não inventar disponibilidade, preços ou prazos. Informação não confirmada deve ser identificada como pendente ou estimativa.
+### 4.5 Análise humana pela GPM
+Um funcionário analisa cada linha e pode:
+- Consultar um ou vários fornecedores.
+- Registar disponibilidade comunicada, preço de aquisição, prazo e condições.
+- Pedir esclarecimentos ao cliente.
+- Propor quantidade diferente ou produto equivalente.
+- Registar custos adicionais e condições comerciais.
 
-### 3.4 Proposta
-1. Equipa prepara proposta com linhas, quantidades, preços, totais, validade e condições.
-2. Envia para análise do cliente.
-3. Alterações relevantes geram nova versão rastreável; não apagar versões anteriores.
+Dados não confirmados devem ser marcados como pendentes ou estimados, nunca apresentados como factos confirmados.
 
-### 3.5 Decisão do cliente
-Cliente pode aceitar, pedir alterações/esclarecimentos ou rejeitar. A aceitação regista a decisão do cliente, mas não confirma automaticamente a encomenda.
+### 4.6 Conversa
+A comunicação deve ficar associada ao pedido ou à proposta, com autor, data e histórico. O chat interno faz parte da visão funcional; a tecnologia e o momento de implementação serão definidos no plano.
 
-### 3.6 Confirmação
-1. Equipa GPM autorizada verifica aceitação, condições, quantidades e dados operacionais.
-2. Resolve pendências.
-3. Confirma formalmente a encomenda.
-4. Sistema cria encomenda associada ao pedido e à versão da proposta.
-5. Cliente acompanha a encomenda.
+### 4.7 Proposta comercial
+A GPM prepara uma proposta com produtos/serviços, quantidades, preços, subtotais, custos aplicáveis, validade, prazo e condições. Cada revisão relevante gera nova versão; versões anteriores não são apagadas nem alteradas silenciosamente.
 
-### 3.7 Acompanhamento
-Cliente consulta estados, datas, documentos e histórico. A equipa atualiza estados com base em informação confirmada.
+### 4.8 Decisão do cliente
+O cliente pode aceitar a versão apresentada, rejeitar ou pedir alteração/esclarecimento. A aceitação é registada com utilizador, data e versão. **Aceitação do cliente não confirma automaticamente a encomenda.**
 
-## 4. Estados de negócio
+### 4.9 Confirmação comercial GPM
+Um funcionário autorizado verifica condições, disponibilidade, quantidades, dados e pendências. Só então executa a ação explícita de confirmação. O sistema cria a encomenda confirmada ligada ao pedido e à versão aceite.
 
-### Pedido de cotação
-- rascunho
-- submetido
-- em análise
-- aguarda informação
-- em consulta a fornecedores
-- proposta preparada
-- encerrado
-- cancelado
+### 4.10 Preparação, envio e entrega
+A equipa atualiza o acompanhamento com base em informação confirmada. Cliente consulta estados, documentos e histórico.
+
+## 5. Estados de negócio
+
+### Pedido
+- draft
+- submitted
+- under_review
+- awaiting_customer_info
+- supplier_consultation
+- proposal_prepared
+- closed
+- cancelled
+
+### Consulta a fornecedor
+- draft
+- sent_manually
+- sent_via_api (futuro)
+- awaiting_response
+- response_received
+- no_response
+- cancelled
 
 ### Proposta
-- rascunho
-- enviada
-- em análise pelo cliente
-- alteração solicitada
-- aceite pelo cliente
-- rejeitada
-- expirada
-- substituída por nova versão
+- draft
+- sent
+- under_customer_review
+- change_requested
+- accepted_by_customer
+- rejected
+- expired
+- superseded
 
 ### Encomenda
-- pendente de confirmação
-- confirmada
-- em preparação
-- parcialmente processada (se aplicável)
-- concluída
-- cancelada
+- pending_confirmation
+- confirmed
+- in_preparation
+- dispatched
+- delivered
+- completed
+- cancelled
 
-**Invariante:** pedido submetido ou proposta aceite nunca se transforma automaticamente em encomenda confirmada. A confirmação é ação explícita e auditável da equipa autorizada.
+**Invariante comercial:** pedido submetido, consulta respondida ou proposta aceite nunca se transforma automaticamente em encomenda confirmada. A confirmação é ação explícita, autorizada e auditável da GPM.
 
-## 5. Módulos
+Cada mudança de estado relevante deve registar autor, data/hora, estado anterior, estado novo e motivo quando aplicável.
 
-### MVP
-1. Site público e catálogo.
-2. Categorias e produtos.
-3. Registo, autenticação e perfil empresarial.
-4. Carrinho/lista de produtos para pedido.
-5. Submissão e gestão de pedidos de cotação.
-6. Área de trabalho da equipa GPM.
-7. Consulta e registo de fornecedores.
-8. Preparação e envio de propostas.
-9. Histórico e versões de propostas.
-10. Aceitação, pedido de alteração ou rejeição.
-11. Confirmação e acompanhamento de encomendas.
-12. Histórico do cliente e documentos básicos.
+## 6. Painéis
 
-### Pós-MVP
-- Área de fornecedor com acesso próprio.
-- Mensagens internas e anexos.
-- Repetição de pedidos.
-- PDFs com identidade visual.
-- Notificações por e-mail/SMS.
-- Pagamentos, logística e APIs de fornecedores.
-- Relatórios avançados.
+### Portal do cliente
+- Visão geral.
+- Perfil e dados da empresa.
+- Catálogo e novo pedido.
+- Meus pedidos e respetivos estados.
+- Propostas e respetivas versões.
+- Conversas associadas a processos.
+- Documentos comerciais.
+- Encomendas confirmadas e acompanhamento.
+- Histórico e possibilidade futura de repetir pedido.
 
-## 6. Arquitetura e tecnologia
-- Laravel 12 como backend.
-- PHP 8.2 como versão local de partida.
+O cliente só pode consultar registos da própria empresa e documentos a que tem acesso.
+
+### Painel da equipa GPM
+- Pedidos novos e fila de análise.
+- Detalhe de pedido e linhas.
+- Consultas e respostas de fornecedores.
+- Registo de preços, disponibilidade, prazos e condições.
+- Conversas e esclarecimentos.
+- Criação e revisão de propostas.
+- Registo da decisão do cliente.
+- Confirmação de encomendas por utilizadores autorizados.
+- Preparação, expedição, entrega e histórico.
+- Gestão de clientes, catálogo, fornecedores e permissões.
+
+## 7. Arquitetura e integrações
+
+### Núcleo independente
+O núcleo Laravel deve gerir clientes, catálogo, pedidos, consultas, propostas, decisões, encomendas, conversas, documentos e auditoria. Regras comerciais não podem ficar dependentes de um gateway ou fornecedor específico.
+
+### Camada de integração futura
+Preparar contratos/adaptadores para:
+- Pagamentos e reconciliação.
+- APIs de fornecedores e marketplaces.
+- Logística e transportadoras.
+- E-mail, SMS e notificações.
+- Sistemas externos autorizados.
+
+Integrações devem usar credenciais protegidas no servidor, validação de assinatura/autenticidade quando suportada, idempotência, registo de eventos, tratamento de falhas e possibilidade de repetição segura. Webhooks não podem alterar diretamente dados comerciais sem validação e regras de domínio.
+
+### Fases
+1. **Inicial:** operação manual pela equipa GPM; pedidos, consultas registadas, negociação, propostas, confirmação e acompanhamento.
+2. **Evolução:** avaliar gateway angolano e automatizar pagamentos após validação comercial e requisitos contratuais.
+3. **Expansão:** conectores de fornecedores, marketplaces, logística e automações.
+
+A aplicação deve continuar operacional manualmente quando uma API externa estiver indisponível. Nenhum gateway, fornecedor, framework de e-commerce ou integração está aprovado sem decisão registada.
+
+## 8. Tecnologia e estrutura
+
+- Laravel 12.
+- PHP 8.2+.
 - MySQL como base de dados principal.
-- Blade para páginas.
+- Blade para templates.
 - HTML, CSS e JavaScript para interface.
-- Validação no servidor.
-- Autorização por perfil e propriedade dos registos.
-- Testes automatizados para regras comerciais.
+- Migrations versionadas.
+- Validação no servidor, Policies/Gates e testes automatizados.
+- Protótipo estático HTML/CSS/JS separado para aprovação visual; Vercel pode alojar esse protótipo, não o backend Laravel/MySQL.
 
-Dompdf é uma opção para PDFs; instalar apenas quando os primeiros documentos estiverem definidos e a compatibilidade for verificada.
+Seguir convenções Laravel: Models, Controllers, Form Requests, Policies, Services/Actions quando justificados, migrations, seeders, Blade e testes. Evitar módulos ou abstrações excessivas antes de existir necessidade comprovada.
 
-### Protótipo
-HTML/CSS/JS estático separado para revisão visual e possível publicação na Vercel. Não tratar Vercel como backend Laravel/MySQL.
+## 9. Integridade, segurança e documentos
 
-### Produção
-Alojamento deverá suportar PHP/Laravel, MySQL, armazenamento persistente, HTTPS, backups e tarefas agendadas quando necessárias. Fornecedor ainda não escolhido.
+- Nunca publicar `.env`, chaves, passwords, tokens ou credenciais.
+- Recalcular totais e validar preços no servidor.
+- Preservar fotografia histórica de preços, quantidades, impostos, transporte e condições da proposta/encomenda.
+- Cada proposta deve ter versão, validade e responsável.
+- Cada encomenda confirmada deve apontar para pedido e versão de proposta.
+- Aplicar autorização no servidor; esconder botões não é segurança.
+- Clientes só consultam dados da própria empresa.
+- Operadores só executam ações permitidas pelo seu papel.
+- Webhooks futuros devem ser autenticados, idempotentes e auditados.
+- Uploads devem validar tipo, tamanho e armazenamento.
+- Cancelamentos e alterações críticas preservam histórico.
 
-## 7. Direção visual inicial
-Referência aprovada: **Neo-Industrial Field Manual**.
-- Branco: #FFFFFF
-- Azul-marinho: #0A2945
-- Dourado: #CE9E53
+## 10. Plano de execução e estado
 
-Transmitir organização, confiança comercial e clareza. Não copiar modelos genéricos nem misturar estilos sem decisão explícita. Interface responsiva e consistente.
-
-## 8. Estrutura técnica prevista
-Seguir convenções Laravel:
-- app/Models — entidades e regras de domínio.
-- app/Http/Controllers — controladores.
-- app/Http/Requests — validação.
-- app/Policies — autorização.
-- database/migrations — evolução da BD.
-- database/seeders — dados de desenvolvimento.
-- resources/views — Blade.
-- resources/css e resources/js — assets.
-- routes/web.php — rotas.
-- tests/Feature e tests/Unit — testes.
-- docs — documentação.
-
-Não criar estrutura paralela que contrarie as convenções do framework.
-
-## 9. Segurança e integridade
-- Nunca guardar credenciais reais no Git.
-- Manter .env fora do controlo de versão.
-- Validar dados no servidor.
-- Aplicar CSRF nas operações web com sessão.
-- Usar hashing seguro de palavras-passe via Laravel.
-- Restringir clientes aos próprios registos.
-- Aplicar autorização nos endpoints, não apenas esconder botões.
-- Registar autor/data em alterações críticas.
-- Validar uploads por tipo, tamanho e localização.
-- Recalcular totais no servidor.
-- Não expor dados comerciais de outros clientes.
-
-## 10. Plano e critérios de conclusão
-| Fase | Entrega | Critério | Estado |
+| Fase | Entrega | Critério de conclusão | Estado |
 |---|---|---|---|
-| 0 | Documentação | Fluxo, âmbito, arquitetura e regras registados | Em curso |
-| 1 | Base Laravel | Laravel inicia, MySQL ligado e migrations executadas | Por iniciar |
-| 2 | Protótipo visual | Páginas revistas e aprovadas | Por iniciar |
-| 3 | Autenticação | Registo, login, logout e permissões testados | Por iniciar |
-| 4 | Catálogo | Categorias e produtos geridos corretamente | Por iniciar |
-| 5 | Pedidos | Cliente cria e equipa gere pedidos com estados testados | Por iniciar |
-| 6 | Fornecedores/propostas | Consultas, propostas e versões rastreáveis | Por iniciar |
-| 7 | Encomendas | Aceitação separada da confirmação; fluxo testado | Por iniciar |
-| 8 | Área cliente/documentos | Histórico e acompanhamento validados | Por iniciar |
-| 9 | Segurança/QA | Testes de autorização, validação e regressão aprovados | Por iniciar |
-| 10 | Produção | Hosting, backups, HTTPS e configuração verificados | Por iniciar |
+| 0 | Documentação e regras | Documentos revistos e registados no GitHub | Concluída |
+| 1 | Base Laravel e MySQL | Instalação, ligação MySQL e migrations testadas | Em validação local |
+| 2 | Protótipo visual | Páginas revistas e aprovadas pelo responsável | Por iniciar |
+| 3 | Autenticação e empresas | Registo, login, perfis e permissões testados | Por iniciar |
+| 4 | Catálogo e seleção | Categorias, produtos, quantidades e lista de pedido testados | Por iniciar |
+| 5 | Pedidos e análise | Submissão, fila interna, histórico e estados testados | Por iniciar |
+| 6 | Fornecedores e propostas | Consultas, respostas, versões e decisões testadas | Por iniciar |
+| 7 | Confirmação e acompanhamento | Apenas GPM autorizado confirma; estados e auditoria testados | Por iniciar |
+| 8 | Conversas e documentos | Acesso, histórico e PDFs validados | Por iniciar |
+| 9 | APIs e integrações | Contratos, segurança, idempotência e fallback testados | Futuro |
+| 10 | Produção | Hosting, HTTPS, backups, monitorização e segurança verificados | Por iniciar |
 
-Só concluir fase após validar critérios e registar resultados em PROJECT_LOG.md.
+Uma fase só pode ser marcada como concluída após evidência de teste e atualização do PROJECT_LOG.md.
 
 ## 11. Decisões pendentes
-- Campos do perfil empresarial.
-- Login de fornecedores no MVP ou gestão interna.
-- Regras de validade, impostos, descontos e transporte.
-- Numeração de pedidos, propostas e encomendas.
-- Estados operacionais finais.
-- Formato dos PDFs.
-- Alojamento e backups.
-- Retenção de documentos e dados.
 
-## 12. Manutenção
-Quando uma decisão mudar: atualizar esta referência, registar motivo/data no PROJECT_LOG.md e ajustar arquitetura/plano. Preservar histórico de decisões.
+- Campos finais e documentos do perfil empresarial.
+- Regras fiscais, impostos, descontos, transporte e margens.
+- Numeração e validade de pedidos/propostas/encomendas.
+- Política de confirmação, cancelamento e expiração.
+- Solução técnica de chat e documentos.
+- Gateway angolano, contratos e taxas.
+- APIs e fornecedores autorizados.
+- Alojamento, backups e retenção de dados.
+- Adoção ou não de Aimeos, Lunar, Bagisto ou outro pacote.
+
+## 12. Governação e alterações
+
+A documentação e a cláusula de controlo em [CHANGE_CONTROL.md](CHANGE_CONTROL.md) são obrigatórias. Nenhuma decisão aprovada pode ser alterada sem documentação e autorização explícita do responsável pelo projeto. Se houver dúvida, conflito ou necessidade de alteração, parar e pedir autorização antes de executar.
+
